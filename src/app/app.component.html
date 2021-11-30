@@ -1,13 +1,8 @@
-<div class="layout">
-  <div>
-    <input #inputEl type="text" (input)="onType(inputEl)" />
-  </div>
-  <div class="layout__middle">
-    <select #selectEl (change)="onSelectOption(selectEl)">
-      <option *ngFor="let option of calculateOptions">{{ option }}</option>
-    </select>
-  </div>
-  <div>
-    {{ result }}
-  </div>
+<div><button (click)="plus()">plus</button></div>
+<div *ngIf="counter$ | ngrxPush as counter">
+  {{ counter }}
 </div>
+<div><button (click)="minus()">minus</button></div>
+
+<button (click)="loadPokemon()">loadPokemon</button>
+{{ pokemon$ | ngrxPush | json }}
